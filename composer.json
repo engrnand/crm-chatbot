@@ -1,0 +1,31 @@
+{
+    "name": "orbixedge/crm-chatbot",
+    "description": "Orbixedge CRM AI chatbot for brand websites: the chat widget and a server-side proxy to the CRM chat API. No AI key on the brand site.",
+    "type": "library",
+    "license": "proprietary",
+    "keywords": ["laravel", "chatbot", "crm", "orbixedge"],
+    "require": {
+        "php": "^8.2",
+        "illuminate/cache": "^10.0|^11.0|^12.0|^13.0",
+        "illuminate/http": "^10.0|^11.0|^12.0|^13.0",
+        "illuminate/routing": "^10.0|^11.0|^12.0|^13.0",
+        "illuminate/support": "^10.0|^11.0|^12.0|^13.0",
+        "illuminate/view": "^10.0|^11.0|^12.0|^13.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Orbixedge\\CrmChatbot\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Orbixedge\\CrmChatbot\\CrmChatbotServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable"
+}
