@@ -24,6 +24,7 @@
         data-title="{{ $widget['title'] ?? $bot['name'] }}"
         data-status="{{ $widget['status'] ?? '' }}"
         data-launcher="{{ $widget['launcher'] ?? ('Chat with ' . $bot['name']) }}"
+        data-launcher-style="{{ $widget['launcher_style'] ?? 'label' }}"
         data-greeting="{{ $widget['greeting'] ?? '' }}"
         data-placeholder="{{ $widget['placeholder'] ?? '' }}"
         data-note="{{ $widget['note'] ?? '' }}"
