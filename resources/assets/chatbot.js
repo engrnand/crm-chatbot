@@ -8,6 +8,7 @@
  *       data-endpoint="/chatbot/message"          (required)
  *       data-reset-endpoint="/chatbot/reset"
  *       data-title="..." data-status="Online" data-launcher="Chat with us"
+ *       data-launcher-style="label|icon"   (icon: round button, no text)
  *       data-greeting="..." data-placeholder="..." data-note="..."
  *       data-theme="dark|light" data-position="right|left"
  *       data-accent="#0f6fb0" data-glow="#3fc8f0"
@@ -39,6 +40,7 @@
         title: ds.title || 'Chat with us',
         status: ds.status || 'Online',
         launcher: ds.launcher || ds.title || 'Chat with us',
+        iconOnly: ds.launcherStyle === 'icon',
         greeting: ds.greeting || 'Hi! How can I help?',
         placeholder: ds.placeholder || 'Type your message',
         note: ds.note || '',
@@ -94,7 +96,14 @@
     launcher.setAttribute('aria-controls', panelId);
     launcher.setAttribute('aria-expanded', 'false');
     launcher.appendChild(orb());
-    launcher.appendChild(el('span', '', cfg.launcher));
+    if (cfg.iconOnly) {
+        // no visible text, so the label moves to the accessible name and tooltip
+        launcher.classList.add('cbw-launcher--icon');
+        launcher.setAttribute('aria-label', cfg.launcher);
+        launcher.title = cfg.launcher;
+    } else {
+        launcher.appendChild(el('span', '', cfg.launcher));
+    }
 
     var panel = el('section', 'cbw-panel');
     panel.id = panelId;

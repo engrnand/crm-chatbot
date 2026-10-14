@@ -129,6 +129,15 @@
     transform: translateY(-3px) scale(1.03);
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, .3);
 }
+/* icon only: a round button sized around the mark and its orbit */
+.cbw-launcher--icon {
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    border-radius: 50%;
+}
+.cbw-launcher--icon .cbw-orb { width: 32px; height: 32px; }
 .cbw.is-open .cbw-launcher { display: none; }
 
 /* ---------- panel ---------- */
